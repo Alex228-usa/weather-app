@@ -1,0 +1,11 @@
+<div>
+    <input type="text" [(ngModel)]="newCity" placeholder="Enter city name">
+    <button (click)="addCity()">Add City</button>
+  </div>
+  
+  <ul>
+    <li *ngFor="let city of cities; let i = index">
+      {{ city }} <button (click)="removeCity(i)">Remove</button>
+    </li>
+  </ul>
+  

@@ -1,0 +1,19 @@
+<!-- calendar.component.html -->
+<div>
+    <h2>Calendar</h2>
+    <div>
+      <input type="text" [(ngModel)]="newEvent.title" placeholder="Event title">
+      <input type="date" [(ngModel)]="newEvent.date">
+      <button (click)="addEvent()">
+        {{ editingIndex !== null ? 'Update Event' : 'Add Event' }}
+      </button>
+    </div>
+    <ul>
+      <li *ngFor="let event of events; let i = index">
+        {{ event.title }} - {{ event.date }}
+        <button (click)="editEvent(i)">Edit</button>
+        <button (click)="deleteEvent(i)">Delete</button>
+      </li>
+    </ul>
+  </div>
+  
